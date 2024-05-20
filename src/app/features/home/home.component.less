@@ -1,0 +1,359 @@
+@import url(../../../color-palette.less);
+
+
+@font-face {
+  font-family: 'RozhaOne-Regular';
+  src: url('../../../assets/fonts/Rozha_One/RozhaOne-Regular.ttf');
+}
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('../../../assets/fonts/Poppins/Poppins-Bold.ttf');
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+#myVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: @light;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  .centerd{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    .welcome-msg{
+      font-size: 2rem;
+      .company-name{
+        color: @red;
+        font-weight: bolder;
+        font-size: 2.5rem;
+        font-family: 'RozhaOne-Regular';
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        animation: typing;
+        animation-duration: 2s;
+        animation-timing-function: steps(30, end);
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+section{
+  padding-top: 4rem;
+    margin: 0 3rem;
+    .text-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .text{
+        color: @light;
+        font-size: 1rem;
+        text-align: center;
+        padding: 1rem 3rem;
+      }
+    }
+}
+.heading-1{
+  color: @pink;
+  
+  font-size: 1.25rem;
+}
+.heading-2{
+  font-weight: bolder;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin: 0.5rem 0;
+  color: @light;
+  font-family: Poppins-Bold;
+  text-align: center;
+}
+
+.background{
+  img{
+    width: 100%;
+    height: 60vh;
+  }
+}
+.text-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -100px;
+  height: 100%;
+
+  
+  .text{
+    background: black;
+    color: @light;
+    width: 70vw;
+    padding: 2rem 4rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: left;
+    letter-spacing: 0.92px;
+    margin: 1rem 0;
+  }
+  .text-content{
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    text-align: center;
+    font-size: 1.15rem;
+    .design-approach-text{
+      background-color: transparent;
+      color: @light;
+      margin-top: 2rem;
+    }
+  }
+  
+
+
+}
+
+.sticky-background{
+  background-image: url('../../../assets/images/carousel-img-3.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  height: 85vh;
+}
+
+.testimonials{
+ width: 100%;
+  height: 40vh;
+  border: 3px solid @red;
+  border-radius: 20px;
+  margin: 1rem 0;
+  background: #0a0a0a;
+  .ant-carousel{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    ::ng-deep .slick-slider{
+      width: 100%;
+    } 
+    .slick-slide{
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  
+  .profile-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    justify-content: center;
+    img{
+      border: 2px solid @earth;
+      padding: 5px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    p{
+      margin: 0.5rem 0;
+      color: @light;
+      font-style: italic;
+      font-size: 1rem;
+    }
+  }
+  .comment{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: @light;
+    font-weight: bold;
+    justify-content: center;
+  }
+}
+
+.contact-container{
+  color: @light;
+  font-size: 1rem;
+  font-weight: lighter;
+  text-align: center;
+  p{
+    margin: 0.5rem 0;
+  }
+  ul{
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    padding: 0;
+    width: 60vw;
+    justify-content: space-evenly;
+    li{
+      a{
+        color: @earth;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.divider{
+    width: 50px;
+    height: 50px;
+    background: @pink;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: @light;
+    font-weight: bold;
+}
+.form-container{
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0 -1rem;
+    margin-top: -25px;
+    form{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 0 1rem;
+      .ant-form-item{
+        width: 25vw;
+        padding: 1rem;
+        .ant-form-item-control{
+          max-width: 100%;
+          input{
+            padding: 0.5rem;
+            border-radius: 10px;
+            background: @dark-grey;
+            width: 100%;
+            color: @light;
+          }
+          textarea{
+            padding: 0.5rem;
+            border-radius: 10px;
+            background: @dark-grey;
+            width: 100%;
+            color: @light;
+          }
+        }
+        .centerd{
+          display: flex;
+          align-items: center;
+          button{
+            padding: 0.5rem;
+            background-color: @pink;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 100px;
+            color: @light;
+          }
+        }
+        
+      } 
+      
+    }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@media screen and (max-width: 1080px) {
+  section{
+    padding-top: 2rem;
+    margin: 0 1.5rem;
+    .text-section{
+      .text{
+        color: @light;
+        font-size: 14px;
+        text-align: center;
+        padding: 1rem 0;
+      }
+    }
+  }
+  .background{
+    img{
+      height: 50vh;
+    }
+  }
+  .text-container{
+    .text{
+      padding: 1rem;
+      width: 80vw;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    .text-content{
+      padding: 1.5rem;
+      letter-spacing: 0.5px;
+      
+    }
+  }
+  .heading-2{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: poppins;
+  }
+  .testimonials{
+     height: 60vh;
+     margin: 0.5rem 0;
+     .ant-carousel{
+       .slick-slide{
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-evenly;
+       }
+     }   
+     .profile-img{
+      width: 100%;
+       p{
+        font-size: 1rem;
+       }
+     }
+     .comment{
+      font-size: 1rem;
+      width: 80%;
+     }
+   }
+   .contact-container{
+    ul{
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+  .form-container{
+    form{
+      .ant-form-item{
+        padding: 0;
+      }
+    }
+  }
+   
+}

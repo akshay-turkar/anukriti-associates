@@ -1,0 +1,157 @@
+<main class="dark-background">
+    <div style="height: 90vh;">
+        <div class="video-container">
+            <video autoplay muted loop id="myVideo">
+                <source src="../../../assets/images/carousel-vid-4.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="content">
+                <div class="centerd">
+                <span class="welcome-msg">Welcome to <p class="company-name">अनुकृति एसोसिएट्स !</p></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section>
+        <div class="text-section">
+            <div class="heading-1">PORTFOLIO</div>
+        <div class="heading-2">Featured Projects</div>
+        <div class="text">As one of India’s leading interior design firms, we believe in un-compromised quality every step of the way.
+            From uplifting and inspiring designs to outstanding finishing and detailing, we believe that for our customers,
+            only the best is good enough.</div>
+        </div>  
+    </section>
+    <div class="cards-container">
+        <div class="cards-content">
+            <div class="card">
+                <div class="card-img">
+                    <nz-carousel nzAutoPlay [nzEffect]="'fade'" [nzDots]="false" [nzAutoPlaySpeed]="'3000'">
+                        @for (index of cardImgs1; track index) {
+                          <div nz-carousel-content>
+                            <img alt="img" [src]="index" />
+                          </div>
+                        }
+                      </nz-carousel></div>
+                <div class="card-text">
+                    <div class="heading">Turkar Mansion, Malanjkhand</div>
+                    <div class="text-content">Balaghat M.P   2,500 SQ FT</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <nz-carousel nzAutoPlay [nzEffect]="'fade'" [nzDots]="false" [nzAutoPlaySpeed]="'3050'">
+                        @for (index of cardImgs2; track index) {
+                          <div nz-carousel-content>
+                            <img alt="img" [src]="index" />
+                          </div>
+                        }
+                      </nz-carousel>
+                </div>
+                <div class="card-text">
+                    <div class="heading">Lorem ipsum dolor</div>
+                    <div class="text-content">Balaghat M.P   2,500 SQ FT</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="background">
+            <img src="../../../assets/images/background-img-1.jpg" alt="background-img"/>
+        </div>
+        <div class="text-container">
+            <div class="heading-2">Interior Design Firm</div>
+            <div class="text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dicta exercitationem distinctio quos illum numquam aspernatur, magni animi iusto voluptatem quia repellendus vitae velit ipsa quaerat aperiam explicabo laboriosam tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, distinctio reprehenderit fugit architecto a cum cupiditate. Adipisci iure maxime totam, quia delectus hic consequuntur explicabo modi illum aperiam qui blanditiis!</p>
+            </div>
+        </div>
+    </section>
+    <section style="margin: 0;">
+        <div class="sticky-background">
+            <div class="text-container" style="margin-top: 0;">
+                <div class="text-content">
+                    <div class="heading-2" >Our Design Approach</div>
+                <div class="design-approach-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dicta exercitationem distinctio quos illum numquam aspernatur, magni animi iusto voluptatem quia repellendus vitae velit ipsa quaerat aperiam explicabo laboriosam tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, distinctio reprehenderit fugit architecto a cum cupiditate. Adipisci iure maxime totam, quia delectus hic consequuntur explicabo modi illum aperiam qui blanditiis!</p>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="text-section">
+            <div class="heading-1">TESTIMONIALS</div>
+            <div class="heading-2">In the last 13 years we’ve completed projects
+                for over 200 satisfied customers across India and internationally
+            </div>
+            <div class="testimonials">
+                <nz-carousel nzAutoPlay  [nzAutoPlaySpeed]="'4000'" [nzEnableSwipe] = "true">
+                    @for (index of testimonials; track index) {
+                      <div nz-carousel-content>
+                        <div class="profile-img">
+                            <img alt="img" [src]="index.img" />
+                            <p>{{index.name}}</p>
+                        </div>
+                        <div class="comment">
+                            <p>"{{index.comment}}"</p>
+                        </div>
+                      </div>
+                    }
+                  </nz-carousel>
+            </div>
+        </div> 
+    </section>
+    
+    <section style="padding-bottom: 3rem;">
+        <div class="text-section">
+            <div class="heading-1">GET IN TOUCH</div>
+            <div class="heading-2">Call now for a free consultation</div>
+            <div class="contact-container">
+                <p>✓   Talk to one of the partners about your project</p>
+                <p>✓   Learn more about our services</p>
+                <p>✓    Discuss fees and budgets</p>
+                <ul>
+                    <li><a href="tel:+917987513557">+91 7987513557</a></li>
+                    <li><a href="tel:+919754739573">+91 9754739573</a></li>
+                    <li><a href="tel:+919981988187">+91 9981988187</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="width-100"><span class="divider">OR</span></div>
+        <div class="form-container">
+            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                <div nz-row [nzGutter]="24" class="width-100" style="justify-content: space-between;" >
+                    <nz-form-item nz-col nzSm="8" nzXs="24" >
+                        <nz-form-control  nzErrorTip="This field is required." class="width-100">
+                          <input nz-input placeholder="NAME" formControlName="name" id="name" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item nz-col nzSm="8" nzXs="24">
+                      <nz-form-control  nzErrorTip="This field is required.">
+                        <input nz-input placeholder="E-MAIL" formControlName="email" id="email" />
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item nz-col nzSm="8" nzXs="24">
+                      <nz-form-control  nzErrorTip="This field is required.">
+                          <input formControlName="phoneNumber" placeholder="PHONE NUMBER" id="'phoneNumber'" nz-input />
+                      </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-row [nzGutter]="24" class="width-100">
+                    <nz-form-item style="width: 100%;">
+                        <nz-form-control [nzSpan]="24" nzHasFeedback >
+                              <textarea formControlName="comment" nz-input rows="7" placeholder="Message"></textarea>
+                        </nz-form-control>
+                    </nz-form-item>
+                    
+                </div>
+                <nz-form-item nz-row class="send-area">
+                    <nz-form-control [nzSpan]="14" class="width-100 centerd">
+                      <button nz-button nzType="primary">Send</button>
+                    </nz-form-control>
+                  </nz-form-item>
+              </form>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,66 @@
+@import url(../../../color-palette.less);
+
+.footer-container{
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .footer-content{
+        display: flex;
+        justify-content: space-around;
+        color: @light;
+        padding: 4rem 1rem;
+        max-width: 1200px;
+        align-self: center;
+        .footer-item{
+            padding: 1rem 2rem;
+            width: 33.33%;
+            .footer-subitem{
+                .heading{
+                    color: @pink;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+                .social{
+                        margin-bottom: 1rem;
+                            .social-icon{
+                                height: 40px;
+                                width: 40px;
+                                border-radius: 50%;
+                                background-color: @red;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-right: 1rem;
+                                .icon{
+                                    font-size: 26px;
+                                    color: @light;
+                                }
+                            } 
+                            .social-text{
+                                width: 300px;
+                            } 
+                  
+                } 
+            }
+            
+        }
+    }
+    .copyright-footer{
+        background-color: @pink;
+        color: @light;
+        text-align: center;
+        padding: 1rem 0;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .footer-container{
+        .footer-content{
+            flex-direction: column;
+            padding: 2rem 1rem;
+            .footer-item{
+                width: 100%;
+            }
+        }
+    }  
+}

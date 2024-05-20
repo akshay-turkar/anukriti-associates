@@ -1,0 +1,54 @@
+<header class="header-container">
+    <nav class="navigation-container">
+      <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">ARP Logo</a>
+      <div class="desktop-nav"><ng-container  *ngTemplateOutlet = "navigation"></ng-container></div>
+      
+      <div class="expander" >
+        <img *ngIf="!isExpanded" (click) = "isExpanded = !isExpanded" src="../../../assets/images/bars.svg" alt="bars">
+        
+        <nz-drawer
+          [nzClosable]="false"
+          [nzVisible]="isExpanded"
+          nzPlacement="right"
+          nzTitle=" "
+          [nzExtra]="extra"
+          [nzWidth]="300"
+          (nzOnClose)="isExpanded = false"
+        >
+          <ng-container *nzDrawerContent>
+            <ng-container *ngTemplateOutlet = "navigation"></ng-container>
+          </ng-container>
+        </nz-drawer>
+      </div>
+    </nav>
+    
+  </header>
+  <ng-template #extra>
+    <img *ngIf="isExpanded" (click) = "isExpanded = !isExpanded" src="../../../assets/images/close.svg" alt="close">
+  </ng-template>
+  <ng-template #navigation>
+    <ul [ngClass]="isExpanded ? 'responsive' : 'features'">
+      <li [ngClass]="activeTab=='home'? 'active-tab':''" routerLink="/" routerLinkActive="active" (click)="tabChange('home')" ariaCurrentWhenActive="page">
+        <a >Home</a>
+      </li>
+      <li [ngClass]="activeTab=='about'? 'active-tab':''"  routerLink="/about-us" routerLinkActive="active" (click)="tabChange('about')" ariaCurrentWhenActive="page">
+        <a>About Us</a>
+      </li>
+      <li [ngClass]="activeTab=='services'? 'active-tab':''" (click)="tabChange('services')" routerLink="/best-services" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <a >Services</a>
+      </li>
+      <li [ngClass]="activeTab=='process'? 'active-tab':''" (click)="tabChange('process')"  routerLink="/our-process" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <a >How it works</a>
+      </li>
+      <li [ngClass]="activeTab=='projects'? 'active-tab':''" (click)="tabChange('projects')"  routerLink="/our-projects" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <a >Projects</a>
+      </li>
+      <li [ngClass]="activeTab=='portfolio'? 'active-tab':''" (click)="tabChange('portfolio')" routerLink="/portfolio" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <a >Our vision</a>
+      </li>
+      <li [ngClass]="activeTab=='contact'? 'active-tab':''" (click)="tabChange('contact')"  routerLink="/contact-us" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <a >Contact</a>
+      </li>       
+    </ul>
+  </ng-template>
+

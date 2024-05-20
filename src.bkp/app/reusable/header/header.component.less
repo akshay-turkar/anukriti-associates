@@ -1,0 +1,121 @@
+@import url(../../../color-palette.less);
+.header-container{
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 2;
+  
+  .navigation-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    a{
+      color: @light;
+      list-style: none;
+    }
+    a:focus{
+      padding: 0 0.5rem;
+    font-weight: bold;
+    border-bottom: 2px solid @light;
+    }
+    li{
+      cursor: pointer;
+    }
+    .desktop-nav{
+      width: 54%;
+      .features{
+        display: flex;
+      justify-content: space-between;
+      width: 100%;
+      list-style: none;
+      font-size: 1rem;
+      margin: 0;
+      padding: 0;
+      li{
+        padding: 0.25rem 0.5rem;
+      }
+      
+      .active-tab{
+        border-bottom: 2px solid @earth;
+        font-weight: bold;
+        a{
+          color: @earth;
+        }
+      }
+      
+    }
+      
+    }   
+    .expander{
+      display: none;
+      img{
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        
+      }
+    }
+  }
+  
+}
+
+::ng-deep .ant-drawer-wrapper-body{
+  background: @dark-grey;
+  .ant-drawer-header{
+    padding: 0.5rem;
+    border-bottom: 1px solid @earth;
+    .ant-drawer-extra{
+      img{
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .ant-drawer-body{
+    padding: 0;
+  }
+}
+.responsive{
+  display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 1.25rem;
+    padding: 0;
+    margin: 0;
+    li{
+      padding: 0.5rem 2rem;
+      a{
+      color: @earth;
+      }
+    }
+    .active-tab{
+      border: 2px solid @earth;
+      background: @pink;
+      font-weight: bold;
+      box-shadow: 0px 0px 3px 1px #D8C3A5 inset;
+      a{
+        color: @light;
+      }
+    }
+}
+
+.scrolled{
+  background-color: #0a0a0a;
+}
+
+
+@media screen and (max-width: 1080px) {
+  .header-container{
+    .navigation-container{
+      .desktop-nav{
+          display: none; 
+      }
+      .expander{
+        display: block;
+      }
+    }
+  }
+}

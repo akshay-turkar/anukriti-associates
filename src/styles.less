@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+@import url(./color-palette.less);
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/Poppins/Poppins-Light.ttf');
+  }
+  
+body{
+    font-size: 14px;
+    font-family: 'Poppins';
+    color: @light;
+}
+
+.width-100{
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dark-background{
+  background-color: @dark-grey;
+}
+
+//cards
+.cards-container{
+  display: flex;
+  justify-content: center;
+  .cards-content{
+    display: flex;
+    .card{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 3rem;
+      border-radius: 10px;
+      background: @red; 
+      background: -webkit-linear-gradient(to bottom, @pink, @red);
+      background: linear-gradient(to bottom, @pink, @red);
+      width: 400px;
+      height: 450px;
+      .card-img{
+        .ant-carousel{
+          width: 350px;
+          height: 370px;
+          position: relative;
+          top: -5%;
+          .slick-slide{
+            img{
+              width: 350px;
+              height: 370px;
+            }
+          }
+        }
+        
+      }
+      .card-text{
+        color: @light;
+        width: 350px;
+        .heading{
+          font-size: 1.25rem;
+          font-weight: bold;
+          line-height: 1.5rem;
+        }
+        .text-content{
+          font-size: 1rem;
+          line-height: 1rem;
+
+        }
+      }
+    }
+    
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .cards-container{
+    .cards-content{
+      flex-direction: column;
+      .card{
+        margin: 2rem 0;
+      }
+    }
+  }
+}
